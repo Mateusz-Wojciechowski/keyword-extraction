@@ -10,7 +10,7 @@ def safely_eval_literal(column):
         return column
 
 
-keywords_bert = pd.read_csv('keywords_bert3.csv', index_col=None)
+keywords_bert = pd.read_csv('keywords_bert.csv', index_col=None)
 keywords_yake = pd.read_csv('keywords_yake.csv', index_col=None)
 keywords_textrank = pd.read_csv('keywords_textrank.csv', index_col=None)
 
