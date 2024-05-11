@@ -55,10 +55,6 @@ def textrank_extraction(text, num_keywords, window_size, d, num_iterations):
     graph = build_graph(text, window_size)
     ranks = perform_page_rank(graph, d, num_iterations)
     sorted_ranks = sorted(ranks.items(), key=lambda x: x[1], reverse=True)
-    print(sorted_ranks)
     keyword_list = get_top_n_keywords(sorted_ranks, num_keywords)
     return keyword_list
 
-
-if __name__ == '__main__':
-    print(textrank_extraction(text, 10, 3, 0.85, 50))
