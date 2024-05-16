@@ -10,6 +10,7 @@ keywords_df['TextRankKeywords'] = keywords_df['TextRankKeywords'].apply(json.loa
 
 textrank_matches = 0
 yake_matches = 0
+textrank_yake_matches = 0
 
 for i in range(len(keywords_df)):
     for word in keywords_df['BertKeyWords'][i]:
@@ -18,8 +19,19 @@ for i in range(len(keywords_df)):
         if word in keywords_df['TextRankKeywords'][i]:
             textrank_matches += 1
 
+for i in range(len(keywords_df)):
+    for word in keywords_df['YakeKeyWords'][i]:
+        if word in keywords_df['TextRankKeywords'][i]:
+            textrank_yake_matches += 1
+
+
 
 total_keywords_amount = 10 * len(keywords_df)
 print(total_keywords_amount)
 print(f"Textrank matches: {textrank_matches}")
 print(f"Yake matches: {yake_matches}")
+print(f"Textrank-YAKE matches: {textrank_yake_matches}")
+
+print(f"Textrank matches ratio: {textrank_matches/total_keywords_amount}")
+print(f"Yake matches ratio: {yake_matches/total_keywords_amount}")
+print(f"Textrank-Yake matches: {textrank_yake_matches/total_keywords_amount}")
