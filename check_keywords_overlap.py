@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 
-keywords_df = pd.read_csv('keywords_merged.csv')
+keywords_df = pd.read_csv('keywords_data/keywords_merged.csv')
 
 keywords_df['BertKeyWords'] = keywords_df['BertKeyWords'].apply(json.loads)
 keywords_df['YakeKeyWords'] = keywords_df['YakeKeyWords'].apply(json.loads)

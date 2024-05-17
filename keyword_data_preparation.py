@@ -10,10 +10,10 @@ def safely_eval_literal(column):
         return column
 
 
-keywords_bert = pd.read_csv('keywords_bert.csv', index_col=None)
-keywords_yake = pd.read_csv('keywords_yake.csv', index_col=None)
-keywords_textrank = pd.read_csv('keywords_textrank.csv', index_col=None)
-keywords_rake = pd.read_csv('keywords_rake.csv', index_col=None)
+keywords_bert = pd.read_csv('keywords_data/keywords_bert.csv', index_col=None)
+keywords_yake = pd.read_csv('keywords_data/keywords_yake.csv', index_col=None)
+keywords_textrank = pd.read_csv('keywords_data/keywords_textrank.csv', index_col=None)
+keywords_rake = pd.read_csv('keywords_data/keywords_rake.csv', index_col=None)
 
 keywords_df = pd.concat([keywords_bert, keywords_yake, keywords_textrank, keywords_rake], axis=1)
 

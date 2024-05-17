@@ -11,7 +11,7 @@ else:
     device = torch.device("cpu")
     print("CUDA is not available, using CPU instead.")
 
-keywords_df = pd.read_csv('keywords_merged.csv')
+keywords_df = pd.read_csv('keywords_data/keywords_merged.csv')
 tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
 model = AutoModel.from_pretrained('bert-base-uncased')
 
@@ -51,14 +51,14 @@ for i in range(len(keywords_df)):
     rake_embeddings.append(rake)
 
 
-with open('bert_embeddings.pkl', 'wb') as file:
+with open('embeddings/bert_embeddings.pkl', 'wb') as file:
     pickle.dump(bert_embeddings, file)
 
-with open('yake_embeddings.pkl', 'wb') as file:
+with open('embeddings/yake_embeddings.pkl', 'wb') as file:
     pickle.dump(yake_embeddings, file)
 
-with open('textrank_embeddings.pkl', 'wb') as file:
+with open('embeddings/textrank_embeddings.pkl', 'wb') as file:
     pickle.dump(textrank_embeddings, file)
 
-with open('rake_embeddings.pkl', 'wb') as file:
+with open('embeddings/rake_embeddings.pkl', 'wb') as file:
     pickle.dump(textrank_embeddings, file)
