@@ -27,7 +27,7 @@ def get_bert_embedding(text):
 keywords_df['BertKeyWords'] = keywords_df['BertKeyWords'].apply(json.loads)
 keywords_df['YakeKeyWords'] = keywords_df['YakeKeyWords'].apply(json.loads)
 keywords_df['TextRankKeywords'] = keywords_df['TextRankKeywords'].apply(json.loads)
-keywords_df['RakeKeyWords'] = keywords_df['TextRankKeywords'].apply(json.loads)
+keywords_df['RakeKeyWords'] = keywords_df['RakeKeyWords'].apply(json.loads)
 
 bert_embeddings = []
 yake_embeddings = []
